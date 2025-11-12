@@ -1,0 +1,136 @@
+{
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": 1,
+      "name": "Dining & Food",
+      "description": "Restaurants, cafes, food delivery, groceries",
+      "keywords": ["restaurant", "cafe", "starbucks", "mcdonalds", "uber eats", "doordash", "grocery", "supermarket", "food"],
+      "parent": null,
+      "subcategories": ["Fast Food", "Fine Dining", "Groceries", "Food Delivery"]
+    },
+    {
+      "id": 2,
+      "name": "Transportation",
+      "description": "Fuel, parking, public transit, ride-sharing",
+      "keywords": ["uber", "lyft", "taxi", "gas", "fuel", "parking", "metro", "transit", "toll"],
+      "parent": null,
+      "subcategories": ["Ride Share", "Fuel & Energy", "Parking", "Public Transit"]
+    },
+    {
+      "id": 3,
+      "name": "Fuel & Energy",
+      "description": "Gasoline, EV charging, diesel",
+      "keywords": ["shell", "bp", "chevron", "tesla supercharger", "ev charging", "gas station", "petrol"],
+      "parent": 2,
+      "subcategories": ["Gasoline", "EV Charging", "Diesel"]
+    },
+    {
+      "id": 4,
+      "name": "Office Supplies",
+      "description": "Stationery, printing, office equipment",
+      "keywords": ["staples", "office depot", "paper", "printer", "ink", "desk", "supplies"],
+      "parent": null,
+      "subcategories": ["Stationery", "Equipment", "Printing"]
+    },
+    {
+      "id": 5,
+      "name": "Software & SaaS",
+      "description": "Cloud services, software subscriptions, licenses",
+      "keywords": ["aws", "azure", "google cloud", "microsoft", "adobe", "slack", "zoom", "github", "saas"],
+      "parent": null,
+      "subcategories": ["Cloud Infrastructure", "Productivity Tools", "Development Tools", "Communication"]
+    },
+    {
+      "id": 6,
+      "name": "Professional Services",
+      "description": "Consulting, legal, accounting, marketing",
+      "keywords": ["consulting", "legal", "lawyer", "accountant", "marketing", "advertising", "pr"],
+      "parent": null,
+      "subcategories": ["Consulting", "Legal", "Accounting", "Marketing & Advertising"]
+    },
+    {
+      "id": 7,
+      "name": "Travel & Accommodation",
+      "description": "Hotels, flights, business travel",
+      "keywords": ["hotel", "airbnb", "airline", "flight", "booking", "expedia", "travel"],
+      "parent": null,
+      "subcategories": ["Lodging", "Airfare", "Travel Agencies"]
+    },
+    {
+      "id": 8,
+      "name": "Utilities",
+      "description": "Electricity, water, internet, phone",
+      "keywords": ["electric", "water", "internet", "phone", "telecom", "utility", "verizon", "at&t"],
+      "parent": null,
+      "subcategories": ["Electricity", "Water", "Internet", "Telecommunications"]
+    },
+    {
+      "id": 9,
+      "name": "Insurance",
+      "description": "Business insurance, liability, health",
+      "keywords": ["insurance", "premium", "policy", "liability", "coverage"],
+      "parent": null,
+      "subcategories": ["Business Insurance", "Liability", "Health Insurance"]
+    },
+    {
+      "id": 10,
+      "name": "Equipment & Hardware",
+      "description": "Computers, servers, manufacturing equipment",
+      "keywords": ["dell", "hp", "apple", "lenovo", "server", "computer", "laptop", "hardware"],
+      "parent": null,
+      "subcategories": ["IT Hardware", "Manufacturing Equipment", "Tools"]
+    },
+    {
+      "id": 11,
+      "name": "Rent & Lease",
+      "description": "Office rent, equipment leasing",
+      "keywords": ["rent", "lease", "landlord", "property", "real estate"],
+      "parent": null,
+      "subcategories": ["Office Rent", "Equipment Lease", "Storage"]
+    },
+    {
+      "id": 12,
+      "name": "Banking & Fees",
+      "description": "Bank fees, transaction charges, interest",
+      "keywords": ["bank fee", "service charge", "interest", "overdraft", "wire transfer"],
+      "parent": null,
+      "subcategories": ["Service Fees", "Interest", "Wire Transfers"]
+    },
+    {
+      "id": 13,
+      "name": "Payroll & Benefits",
+      "description": "Salaries, wages, employee benefits",
+      "keywords": ["payroll", "salary", "wage", "benefits", "401k", "health plan"],
+      "parent": null,
+      "subcategories": ["Salaries", "Benefits", "Taxes"]
+    },
+    {
+      "id": 14,
+      "name": "Entertainment & Marketing",
+      "description": "Client entertainment, promotional events",
+      "keywords": ["entertainment", "event", "conference", "exhibition", "sponsorship"],
+      "parent": null,
+      "subcategories": ["Client Entertainment", "Events", "Sponsorships"]
+    },
+    {
+      "id": 15,
+      "name": "Miscellaneous",
+      "description": "Uncategorized or rare transactions",
+      "keywords": ["misc", "other", "unknown"],
+      "parent": null,
+      "subcategories": []
+    }
+  ],
+  "rules": {
+    "hierarchical": true,
+    "allow_custom_categories": true,
+    "confidence_threshold": 0.7,
+    "multi_label": false
+  },
+  "metadata": {
+    "created_at": "2025-11-12",
+    "updated_at": "2025-11-12",
+    "total_categories": 15
+  }
+}
