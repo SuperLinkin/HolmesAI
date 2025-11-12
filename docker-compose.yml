@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  holmes-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: holmes-ai-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./config:/app/config
+    environment:
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+      - MODEL_PATH=/app/models
+      - LOG_LEVEL=INFO
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - holmes-network
+
+  # Optional: PostgreSQL with pgvector for local development
+  postgres:
+    image: ankane/pgvector:latest
+    container_name: holmes-postgres
+    environment:
+      POSTGRES_USER: holmes
+      POSTGRES_PASSWORD: holmes123
+      POSTGRES_DB: holmes_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - holmes-network
+
+  # Optional: Prometheus for monitoring
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: holmes-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    networks:
+      - holmes-network
+
+networks:
+  holmes-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  prometheus_data:
