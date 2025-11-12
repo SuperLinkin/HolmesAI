@@ -39,6 +39,21 @@ services:
     networks:
       - holmes-network
 
+  # Frontend Dashboard
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: holmes-dashboard
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - holmes-ai
+    networks:
+      - holmes-network
+
   # Optional: Prometheus for monitoring
   prometheus:
     image: prom/prometheus:latest

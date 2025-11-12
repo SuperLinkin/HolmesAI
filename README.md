@@ -126,15 +126,44 @@ Interactive API docs: `http://localhost:8000/docs`
 ## 🐳 Docker Deployment
 
 ```bash
-# Build and run with Docker Compose
+# Build and run with Docker Compose (includes API + Dashboard)
 docker-compose up -d
 
 # View logs
 docker-compose logs -f holmes-ai
+docker-compose logs -f frontend
 
 # Stop services
 docker-compose down
 ```
+
+Services will be available at:
+- **API**: `http://localhost:8000`
+- **Dashboard**: `http://localhost:3000`
+- **API Docs**: `http://localhost:8000/docs`
+
+## 🎨 Web Dashboard
+
+Holmes AI includes a modern React dashboard for monitoring and managing the system:
+
+### Features
+- **Real-time Dashboard**: System health, prediction statistics, and performance metrics
+- **Performance Monitoring**: Live drift detection with F1/Precision/Recall tracking
+- **Transaction Categorization**: Interactive form with real-time predictions
+- **Feedback Management**: Submit corrections for continuous learning
+- **Analytics**: Category distribution charts and feature importance analysis
+
+### Dashboard Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Dashboard will be available at `http://localhost:3000`
+
+See [frontend/README.md](frontend/README.md) for detailed documentation.
 
 ## 📡 API Usage
 
